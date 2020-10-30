@@ -1,0 +1,4 @@
+/* Hide the loading gif & the results */
+#loading, #results {
+    display: none;
+}

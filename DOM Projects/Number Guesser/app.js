@@ -29,33 +29,34 @@ UIguessBtn.addEventListener('click', function() {
 
     // Validate
     if(isNaN(guess) || guess < min || guess > max){
-        setMessage(`Please enter a number between ${min} and ${max}`, 'red');
-    }
-
-    // Check if won
-    if(guess === winningNum) {
-        // Game Over - WON
-        gameOver(true, `${winningNum} is correct, You Win!`)
-
+        setMessage(`Please enter a number between ${min} and ${max}`, 'orange');
+        UIguessInput.style.borderColor = 'orange';
     } else {
-        // Wrong number
-        guessesLeft -= 1;
-
-        if(guessesLeft === 0) {
-            //Game Over - LOST
-            gameOver(false, `Game Over, You Lost! The correct number was ${winningNum}`)
+        // Check if won
+        if(guess === winningNum) {
+            // Game Over - WON
+            gameOver(true, `${winningNum} is correct, You Win!`)
 
         } else {
-            // Game keeps on - answer wrong
+            // Wrong number
+            guessesLeft -= 1;
 
-            // Change border color
-            UIguessInput.style.borderColor = 'red';
+            if(guessesLeft === 0) {
+                //Game Over - LOST
+                gameOver(false, `Game Over, You Lost! The correct number was ${winningNum}`)
 
-            // Clear Input
-            UIguessInput.value = '';
+            } else {
+                // Game keeps on - answer wrong
 
-            // Tell user it is the wrong number
-            setMessage(`${guess} is not correct, ${guessesLeft} guess(es) left`, 'red');
+                // Change border color
+                UIguessInput.style.borderColor = 'red';
+
+                // Clear Input
+                UIguessInput.value = '';
+
+                // Tell user it is the wrong number
+                setMessage(`${guess} is not correct, ${guessesLeft} guess(es) left`, 'red');
+            }
         }
     }
 });
@@ -77,22 +78,19 @@ function gameOver(won, msg) {
     UIguessBtn.className += 'play-again';
 }
 
+// Set message
+function setMessage(msg, color){
+    UImessage.style.color = color;
+    UImessage.textContent = msg;
+}
+
 // Get Random Number
 function getRandomNum(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
-
-
 /* Another way
 function getRandomNum() {
     let randomNum = Math.floor(Math.random() * 10) + 1;
     return randomNum;
 }
 */
-
-
-// Set message
-function setMessage(msg, color){
-    UImessage.style.color = color;
-    UImessage.textContent = msg;
-}

@@ -105,4 +105,4 @@ document.getElementById('book-list').addEventListener('click', function(e) {
     ui.showAlert('Book Succesfully Removed!', 'success');
 
     e.preventDefault();
-})
+});

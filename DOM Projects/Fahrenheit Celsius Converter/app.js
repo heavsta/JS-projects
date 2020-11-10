@@ -13,6 +13,7 @@ let numberOfClicks = 0;
 inverter.addEventListener('click', () => {
     addClick();
     invertParameters();
+    animateParameters();
 });
 
 
@@ -68,4 +69,14 @@ function invertParameters() {
         input.value = '';
         results.value = '';
     }
+}
+
+// Animate Parameters
+function animateParameters() {
+    toConvert.classList.remove('animation');
+    converted.classList.remove('animation');
+    window.requestAnimationFrame(function() {
+        toConvert.classList.add('animation');
+        converted.classList.add('animation');
+      });
 }

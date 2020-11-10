@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <title>Temperature Converter</title>
+</head>
+<body class="has-text-centered">
+  <h1 class="title is-1 has-text-primary">Farenheit/Celsius Converter</h1>
+
+  <div class="container">
+    <span>Farenheit</span>
+    <span class="icon is-large"><i class="fas fa-exchange-alt"></i></span>
+    <span>Celsius</span>
+  </div>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <p class="control has-icons-left">
+                <input type="number" class="input" id="amount" placeholder="Enter your number">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-temperature-high"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <input type="number" class="input" id="result" disabled>
+              </p>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

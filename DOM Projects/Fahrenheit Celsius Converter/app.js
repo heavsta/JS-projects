@@ -4,6 +4,7 @@ const input = document.getElementById('degrees');
 const inverter = document.getElementById('arrows');
 const toConvert = document.getElementById('toConvert');
 const converted = document.getElementById('converted');
+const icon = document.querySelector('i');
 
 let numberOfClicks = 0;
 
@@ -50,7 +51,6 @@ function isEven(value) {
 // Add +1 for each click
 function addClick() {
     numberOfClicks ++;
-    console.log(numberOfClicks);
 }
 
 // Invert the Parameters
@@ -58,8 +58,14 @@ function invertParameters() {
     if(isEven(numberOfClicks) === true) {
         toConvert.innerHTML = 'Fahrenheit';
         converted.innerHTML = 'Celsius';
+        // Clean input & result
+        input.value = '';
+        results.value = '';
     } else {
         toConvert.innerHTML = 'Celsius';
         converted.innerHTML = 'Fahrenheit';
+        // Clean input & result
+        input.value = '';
+        results.value = '';
     }
 }

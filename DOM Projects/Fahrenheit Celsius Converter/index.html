@@ -8,19 +8,15 @@
   <title>Temperature Converter</title>
 </head>
 <body class="has-text-centered">
-  <h1 class="title is-1 has-text-primary">Fahrenheit/Celsius Converter</h1>
+  <h1 class="title is-1 has-text-primary mt-2 mb-6">Fahrenheit/Celsius Converter</h1>
 
-  <div class="container">
-    <span id="toConvert">Fahrenheit</span>
-    <span id="arrows" class="icon is-large"><i class="fas fa-exchange-alt"></i></span>
-    <span id="converted">Celsius</span>
-  </div>
-  <div class="container">
+  <div class="container mt-6">
     <div class="columns is-centered">
       <div class="column is-half">
         <div class="field is-horizontal">
           <div class="field-body">
             <div class="field">
+              <label class="label no-select" id="toConvert">Fahrenheit</label>
               <p class="control has-icons-left">
                 <input type="number" class="input" id="degrees" placeholder="Enter your number" oninput="convert(this.value)" onchange="convert(this.value)">
                 <span class="icon is-small is-left">
@@ -28,7 +24,9 @@
                 </span>
               </p>
             </div>
+            <span id="arrows" class="icon is-large"><i class="fas fa-exchange-alt mr-3 mb-5"></i></span>
             <div class="field">
+              <label class="label no-select" id="converted">Celsius</label>
               <p class="control">
                 <input class="input" id="results" disabled></input>
               </p>

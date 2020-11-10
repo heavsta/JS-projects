@@ -21,7 +21,7 @@
           <div class="field-body">
             <div class="field">
               <p class="control has-icons-left">
-                <input type="number" class="input" id="amount" placeholder="Enter your number">
+                <input type="number" class="input" id="degrees" placeholder="Enter your number" oninput="convertToCelsius(this.value)" onchange="convertToCelsius(this.value)">
                 <span class="icon is-small is-left">
                   <i class="fas fa-temperature-high"></i>
                 </span>
@@ -29,7 +29,7 @@
             </div>
             <div class="field">
               <p class="control">
-                <input type="number" class="input" id="result" disabled>
+                <input class="input" id="results" disabled></input>
               </p>
             </div>
           </div>

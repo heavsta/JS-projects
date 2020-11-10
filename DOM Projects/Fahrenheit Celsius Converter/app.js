@@ -2,12 +2,17 @@
 const results = document.getElementById('results');
 const input = document.getElementById('degrees');
 const inverter = document.getElementById('arrows');
+const toConvert = document.getElementById('toConvert');
+const converted = document.getElementById('converted');
 
 let numberOfClicks = 0;
 
 
 // Event Listeners
-inverter.addEventListener('click', addClick);
+inverter.addEventListener('click', () => {
+    addClick();
+    invertParameters();
+});
 
 
 /*
@@ -17,17 +22,19 @@ inverter.addEventListener('click', addClick);
 // Main Function
 function convert(degrees) {
     if(isEven(numberOfClicks) === true) {
-            let celsius = ((degrees - 32) * 5/9).toFixed(2);
-            results.value = `${celsius} °C`;
-            if(input.value.length == 0) {
-                results.value = '';
-            }
+        // Convert to Celsius
+        let celsius = ((degrees - 32) * 5/9).toFixed(2);
+        results.value = `${celsius} °C`;
+        if(input.value.length == 0) {
+            results.value = '';
+        }
     } else {
-            let fahrenheit = ((degrees * 9/5) +32).toFixed(2);
-            results.value = `${fahrenheit} °F`;
-            if(input.value.length == 0) {
-                results.value ='';
-            }
+        // Convert to Fahrenheit
+        let fahrenheit = ((degrees * 9/5) +32).toFixed(2);
+        results.value = `${fahrenheit} °F`;
+        if(input.value.length == 0) {
+            results.value ='';
+        }
     }
 }
 
@@ -44,4 +51,15 @@ function isEven(value) {
 function addClick() {
     numberOfClicks ++;
     console.log(numberOfClicks);
+}
+
+// Invert the Parameters
+function invertParameters() {
+    if(isEven(numberOfClicks) === true) {
+        toConvert.innerHTML = 'Fahrenheit';
+        converted.innerHTML = 'Celsius';
+    } else {
+        toConvert.innerHTML = 'Celsius';
+        converted.innerHTML = 'Fahrenheit';
+    }
 }

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bitter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+}
+
+.carousel {
+    height: 500px;
+    width: 1300px;
+    overflow: hidden;
+}
+
+.carousel .normal {
+    opacity: 0.5;
+    width: 300px;
+    height: 300px;
+    margin-top: 100px
+}
+
+.carousel .big {
+    width: 500px;
+    height: 500px;
+    margin: 0;
+}
+
+.carousel img {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    display: block;
+    margin: 0 50px;
+    object-fit: cover;
+    transition: width 500ms ease-in-out, height 500ms ease-in-out, opacity 500ms ease-in-out, margin 500ms ease-in-out;
+}
+
+.image-container {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 500ms ease-in-out;
+}
+
+.carousel-btn {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.carousel-btn:focus {
+    outline: none;
+}
